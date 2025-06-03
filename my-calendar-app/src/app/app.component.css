@@ -1,0 +1,94 @@
+/* Calendar container styling */
+.container {
+  max-width: 1200px;
+}
+
+/* Calendar header styling */
+h1 {
+  color: #333;
+  font-weight: 300;
+}
+
+h2 {
+  color: #555;
+  font-weight: 400;
+}
+
+/* Button styling */
+.btn {
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+/* Button group styling */
+.btn-group .btn {
+  margin: 0;
+}
+
+.btn-group .btn:not(:last-child) {
+  border-right: none;
+}
+
+.btn-group .btn:hover {
+  z-index: 1;
+}
+
+/* Calendar specific styling */
+.cal-month-view,
+.cal-week-view,
+.cal-day-view {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Week and Day view specific styling */
+.cal-week-view .cal-header,
+.cal-day-view .cal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.cal-week-view .cal-time,
+.cal-day-view .cal-time {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+/* Event styling */
+.cal-event {
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-group .btn {
+    border-radius: 4px !important;
+    margin-bottom: 5px;
+    border-right: 1px solid #dee2e6 !important;
+  }
+  
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .d-flex.justify-content-between .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <!-- Header -->
+  <div class="row mb-4">
+    <div class="col-12 text-center">
+      <h1 class="display-4">{{ title }}</h1>
+    </div>
+    <div class="btn-group" role="group">
+      <button 
+        class="btn" 
+        [class.btn-primary]="isViewActive(view)" 
+        [class.btn-outline-primary]="!isViewActive(view)" 
+        (click)="setView('month')" 
+        [disabled]="isViewActive('month')">
+            Month
+      </button>
+      <button 
+        class="btn" 
+        [class.btn-primary]="isViewActive(view)" 
+        [class.btn-outline-primary]="!isViewActive(view)" 
+        (click)="setView('week')" 
+        [disabled]="isViewActive('week')">
+            Week
+      </button>
+      <button 
+        class="btn" 
+        [class.btn-primary]="isViewActive(view)" 
+        [class.btn-outline-primary]="!isViewActive(view)" 
+        (click)="setView('day')" 
+        [disabled]="isViewActive('day')">
+            Day
+      </button>
+    </div>
+  </div>
+
+  <!-- Calendar Navigation -->
+  <div class="row mb-3">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center">
+        <button class="btn btn-primary" (click)="previousPeriod()">
+          &lt; Previous {{ calendarViewType }}
+        </button>
+        
+        <h2 class="mb-0">{{ currentPeriodDisplay }}</h2>
+        
+        <button class="btn btn-primary" (click)="nextPeriod()">
+          Next {{ calendarViewType }} &gt;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendar -->
+  <div class="row">
+    <div class="col-12">
+      <mwl-calendar-month-view
+        *ngIf="view === 'month'"
+        [viewDate]="viewDate"
+        [events]="events">
+      </mwl-calendar-month-view>
+      <mwl-calendar-week-view
+        *ngIf="view === 'week'"
+        [viewDate]="viewDate"
+        [events]="events">
+      </mwl-calendar-week-view>
+      <mwl-calendar-day-view
+        *ngIf="view === 'day'"
+        [viewDate]="viewDate"
+        [events]="events">
+      </mwl-calendar-day-view>
+    </div>
+  </div>
+</div>
